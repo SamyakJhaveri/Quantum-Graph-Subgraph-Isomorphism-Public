@@ -1,0 +1,56 @@
+sample3_type1_v1.py,"num = 17
+is_prime = True
+for i in range(2, int(num/2)+1):
+    if num % i == 0:
+        is_prime = False
+        break
+if is_prime:
+    print(num, ""is a prime number"")
+else:
+    print(num, ""is not a prime number"")"
+sample3_type2_v1.py,"n = 13
+prime = True
+for i in range(2, int(n/2)+1):
+    if n % i == 0:
+        prime = False
+        break
+if prime:
+    print(n, ""is a prime number"")
+else:
+    print(n, ""is not a prime number"")
+"
+sample3_type3_v1.py,"num = 17
+is_prime = True
+for i in range(2, int(num/2)+1):
+    if num % i == 0:
+        is_prime = False
+        break
+if is_prime:
+    print(num, ""is a prime number"")
+"
+sample3_type3_v2.py,"num = 17
+is_prime = True
+for i in range(2, int(num/2)-1):
+    if num % i == 0:
+        is_prime = False
+        break
+if is_prime:
+    print(num, ""is a prime number"")
+else:
+    print(num, ""is not a prime number"")"
+sample4_type1_v1.py,"import cmath
+num = 1+2j
+num_sqrt = cmath.sqrt(num)
+print('The square root of {0} is {1:0.3f}+{2:0.3f}j'.format(num ,num_sqrt.real,num_sqrt.imag))"
+sample4_type2_v1.py,"import cmath
+n = -4+5j
+n_sqrt = cmath.sqrt(n)
+print('The square root of {0} is {1:0.3f}+{2:0.3f}j'.format(n, n_sqrt.real, n_sqrt.imag))
+"
+sample4_type3_v1.py,"import cmath
+num = complex(3, 4)
+num_sqrt = cmath.sqrt(num)
+print('The square root of {0} is {1:0.3f}+{2:0.3f}j'.format(num ,num_sqrt.real,num_sqrt.imag))"
+sample4_type3_v2.py,"import cmath
+num = 1+2j
+num_sqrt = cmath.sqrt(num)"

@@ -1,0 +1,36 @@
+Number of NODES in Larger Code:27
+Number of EDGES in Larger Code:31
+Number of NODES in Smaller Code:12
+Number of EDGES in Smaller Code:11
+G1 Graph - Original Code: Graph with 27 nodes and 31 edges
+G2 Graph - Code Clone: Graph with 12 nodes and 11 edges
+G1 nodes:[<ast.Module object at 0x12d7cc220>, <ast.Assign object at 0x12d7cc0a0>, <ast.For object at 0x12d7f7d30>, <ast.Name object at 0x12d7cc040>, <ast.List object at 0x12d7f7eb0>, <ast.Name object at 0x12d7f7d00>, <ast.Name object at 0x12d7f7cd0>, <ast.If object at 0x12d7f7ca0>, <ast.Store object at 0x100e09bb0>, <ast.Constant object at 0x12d7f7e50>, <ast.Constant object at 0x12d7f7e20>, <ast.Constant object at 0x12d7f7df0>, <ast.Constant object at 0x12d7f7dc0>, <ast.Constant object at 0x12d7f7d90>, <ast.Constant object at 0x12d7f7d60>, <ast.Load object at 0x100e09c10>, <ast.Compare object at 0x12d7f7c70>, <ast.Expr object at 0x12d7f7040>, <ast.BinOp object at 0x12d7f7c40>, <ast.Eq object at 0x100cd6fa0>, <ast.Constant object at 0x12d7f7100>, <ast.Call object at 0x12d7f7070>, <ast.Name object at 0x12d7f7c10>, <ast.Mod object at 0x100e097f0>, <ast.Constant object at 0x12d7f7be0>, <ast.Name object at 0x12d7f70a0>, <ast.Name object at 0x12d7f70d0>]
+G1 edges:[(<ast.Module object at 0x12d7cc220>, <ast.Assign object at 0x12d7cc0a0>), (<ast.Module object at 0x12d7cc220>, <ast.For object at 0x12d7f7d30>), (<ast.Assign object at 0x12d7cc0a0>, <ast.Name object at 0x12d7cc040>), (<ast.Assign object at 0x12d7cc0a0>, <ast.List object at 0x12d7f7eb0>), (<ast.For object at 0x12d7f7d30>, <ast.Name object at 0x12d7f7d00>), (<ast.For object at 0x12d7f7d30>, <ast.Name object at 0x12d7f7cd0>), (<ast.For object at 0x12d7f7d30>, <ast.If object at 0x12d7f7ca0>), (<ast.Name object at 0x12d7cc040>, <ast.Store object at 0x100e09bb0>), (<ast.List object at 0x12d7f7eb0>, <ast.Constant object at 0x12d7f7e50>), (<ast.List object at 0x12d7f7eb0>, <ast.Constant object at 0x12d7f7e20>), (<ast.List object at 0x12d7f7eb0>, <ast.Constant object at 0x12d7f7df0>), (<ast.List object at 0x12d7f7eb0>, <ast.Constant object at 0x12d7f7dc0>), (<ast.List object at 0x12d7f7eb0>, <ast.Constant object at 0x12d7f7d90>), (<ast.List object at 0x12d7f7eb0>, <ast.Constant object at 0x12d7f7d60>), (<ast.List object at 0x12d7f7eb0>, <ast.Load object at 0x100e09c10>), (<ast.Name object at 0x12d7f7d00>, <ast.Store object at 0x100e09bb0>), (<ast.Name object at 0x12d7f7cd0>, <ast.Load object at 0x100e09c10>), (<ast.If object at 0x12d7f7ca0>, <ast.Compare object at 0x12d7f7c70>), (<ast.If object at 0x12d7f7ca0>, <ast.Expr object at 0x12d7f7040>), (<ast.Load object at 0x100e09c10>, <ast.Name object at 0x12d7f7c10>), (<ast.Load object at 0x100e09c10>, <ast.Name object at 0x12d7f70a0>), (<ast.Load object at 0x100e09c10>, <ast.Name object at 0x12d7f70d0>), (<ast.Compare object at 0x12d7f7c70>, <ast.BinOp object at 0x12d7f7c40>), (<ast.Compare object at 0x12d7f7c70>, <ast.Eq object at 0x100cd6fa0>), (<ast.Compare object at 0x12d7f7c70>, <ast.Constant object at 0x12d7f7100>), (<ast.Expr object at 0x12d7f7040>, <ast.Call object at 0x12d7f7070>), (<ast.BinOp object at 0x12d7f7c40>, <ast.Name object at 0x12d7f7c10>), (<ast.BinOp object at 0x12d7f7c40>, <ast.Mod object at 0x100e097f0>), (<ast.BinOp object at 0x12d7f7c40>, <ast.Constant object at 0x12d7f7be0>), (<ast.Call object at 0x12d7f7070>, <ast.Name object at 0x12d7f70a0>), (<ast.Call object at 0x12d7f7070>, <ast.Name object at 0x12d7f70d0>)]
+G2 nodes:[<ast.Module object at 0x100e16970>, <ast.Assign object at 0x100e16940>, <ast.Name object at 0x100e16910>, <ast.List object at 0x12d7cc130>, <ast.Store object at 0x100e09bb0>, <ast.Constant object at 0x12d7cc670>, <ast.Constant object at 0x12d7cc1c0>, <ast.Constant object at 0x12d7cc550>, <ast.Constant object at 0x12d7cc280>, <ast.Constant object at 0x12d7cc190>, <ast.Constant object at 0x12d7cc100>, <ast.Load object at 0x100e09c10>]
+G2 edges:[(<ast.Module object at 0x100e16970>, <ast.Assign object at 0x100e16940>), (<ast.Assign object at 0x100e16940>, <ast.Name object at 0x100e16910>), (<ast.Assign object at 0x100e16940>, <ast.List object at 0x12d7cc130>), (<ast.Name object at 0x100e16910>, <ast.Store object at 0x100e09bb0>), (<ast.List object at 0x12d7cc130>, <ast.Constant object at 0x12d7cc670>), (<ast.List object at 0x12d7cc130>, <ast.Constant object at 0x12d7cc1c0>), (<ast.List object at 0x12d7cc130>, <ast.Constant object at 0x12d7cc550>), (<ast.List object at 0x12d7cc130>, <ast.Constant object at 0x12d7cc280>), (<ast.List object at 0x12d7cc130>, <ast.Constant object at 0x12d7cc190>), (<ast.List object at 0x12d7cc130>, <ast.Constant object at 0x12d7cc100>), (<ast.List object at 0x12d7cc130>, <ast.Load object at 0x100e09c10>)]
+Added <ast.Module object at 0x100e16970> as a discrete variable
+Added <ast.Assign object at 0x100e16940> as a discrete variable
+Added <ast.Name object at 0x100e16910> as a discrete variable
+Added <ast.List object at 0x12d7cc130> as a discrete variable
+Added <ast.Store object at 0x100e09bb0> as a discrete variable
+Added <ast.Constant object at 0x12d7cc670> as a discrete variable
+Added <ast.Constant object at 0x12d7cc1c0> as a discrete variable
+Added <ast.Constant object at 0x12d7cc550> as a discrete variable
+Added <ast.Constant object at 0x12d7cc280> as a discrete variable
+Added <ast.Constant object at 0x12d7cc190> as a discrete variable
+Added <ast.Constant object at 0x12d7cc100> as a discrete variable
+Added <ast.Load object at 0x100e09c10> as a discrete variable
+Count is:1783
+
+
+Type of 'results':<class 'dimod.sampleset.SampleSet'>
+G2 is a Sub-Graph of G1. Yay!
+best_mapping:{<ast.Module object at 0x100d6a970>: 26, <ast.Assign object at 0x100d6a940>: 15, <ast.Name object at 0x100d6a910>: 6, <ast.List object at 0x12fb67ac0>: 4, <ast.Store object at 0x100d5dbb0>: 2, <ast.Constant object at 0x12fb67eb0>: 11, <ast.Constant object at 0x12fb67a90>: 9, <ast.Constant object at 0x12fb67970>: 10, <ast.Constant object at 0x12fb67e20>: 14, <ast.Constant object at 0x12fb67e50>: 12, <ast.Constant object at 0x12fb67e80>: 1, <ast.Load object at 0x100d5dc10>: 13}
+Traceback (most recent call last):
+  File "/Users/samyakjhaveri/Desktop/Drive Folder/Research/UCI Quantum Code Clone Detection Project/Working Code to Use 2.0/qccd_experiment_conductor_script_for_experiment.py", line 153, in <module>
+    sgi_qccd_H1_for_experiment.present_results(G1, G2, sampleset)
+  File "/Users/samyakjhaveri/Desktop/Drive Folder/Research/UCI Quantum Code Clone Detection Project/Working Code to Use 2.0/sgi_qccd_H1_for_experiment.py", line 435, in present_results
+    updated_best_mapping = {best_mapping[k]: G1.nodes[v] for k, v in best_mapping}
+  File "/Users/samyakjhaveri/Desktop/Drive Folder/Research/UCI Quantum Code Clone Detection Project/Working Code to Use 2.0/sgi_qccd_H1_for_experiment.py", line 435, in <dictcomp>
+    updated_best_mapping = {best_mapping[k]: G1.nodes[v] for k, v in best_mapping}
+TypeError: cannot unpack non-iterable Module object

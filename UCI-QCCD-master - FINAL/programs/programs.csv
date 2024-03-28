@@ -1,0 +1,164 @@
+sample7_type1_v2.py,"import cmath
+a = 1
+b = 5
+c = 6
+d = (b**2) - (4*a*c)
+sol1 = (-b-cmath.sqrt(d))/(2*a)
+sol2 = (-b+cmath.sqrt(d))/(2*a)
+print('The solution are {0} and {1}'.format(sol1,sol2))"
+sample7_type1_v3.py,"import cmath # import complex math module
+a = 1
+b = 5
+c = 6
+
+d = (b**2) - (4*a*c)
+sol1 = (-b-cmath.sqrt(d))/(2*a)
+sol2 = (-b+cmath.sqrt(d))/(2*a)
+print('The solution are {0} and {1}'.format(sol1,sol2))"
+sample7_type1_v4.py,"import cmath
+a=1
+b=5
+c=6
+d=(b**2)-(4*a*c)
+sol1=(-b-cmath.sqrt(d))/(2*a)
+sol2=(-b+cmath.sqrt(d))/(2*a)
+print('The solution are {0} and {1}'.format(sol1,sol2))"
+sample7_type2_v2.py,"import cmath
+a = 2
+b = 7
+c = 8
+d = (b**2) - (3*a*c)
+sol1 = (-b-cmath.sqrt(d))/(3*a)
+sol2 = (-b+cmath.sqrt(d))/(3*a)
+print('The solution are {0} and {1}'.format(sol1,sol2))"
+sample7_type2_v3.py,"import cmath
+p = 2
+q = 7
+r = 8
+s = (q**2) - (3*p*r)
+sola = (-q-cmath.sqrt(s))/(3*p)
+solb = (-q+cmath.sqrt(s))/(3*p)
+print('The solution are {0} and {1}'.format(sola,solb))"
+sample7_type3_v2.py,"import cmath
+a = 1
+b = 5
+c = 6
+d = (b**2) - (4*a*c)
+sol1 = (-b-cmath.sqrt(d))/(2*a)
+sol2 = (-b+cmath.sqrt(d))/(2*a)
+
+print('The solution are {0} and {1}'.format(sol2,sol1))"
+sample7_type3_v3.py,"import cmath
+a = 1
+b = 5
+c = 6
+d = (b**2) - (4*a*c)
+
+sol2 = (-b+cmath.sqrt(d))/(2*a)
+print('The solution are sol1 and {1}'.format(sol2))"
+sample7_type3_v4.py,"import cmath
+a = 1
+
+b = 5
+c = 6
+d = (b**2) - (4*a*c)
+sol1 = (-b-cmath.sqrt(d))/(2*a)
+sol2 = (-b+cmath.sqrt(d))/(2*a)
+print('The solution are {0} and {1}'.format(sol1,sol2))"
+sample8_type1_v2.py,"lower = 100
+upper = 2000
+for num in range(lower, upper + 1):
+   order = len(str(num))
+   sum = 0
+   temp = num
+   while temp > 0:
+       digit = temp % 10
+       sum += digit ** order
+       temp //= 10
+   if num == sum:
+       print(num)"
+sample8_type1_v3.py,"lower = 100
+upper = 2000
+for num in range(lower, upper + 1):
+   order = len(str(num)) # order of number
+   sum = 0 # initialize sum
+   temp = num
+   while temp > 0:
+       digit = temp % 10
+       sum += digit ** order
+       temp //= 10
+
+   if num == sum:
+       print(num)"
+sample8_type1_v4.py,"lower=100
+upper=2000
+for num in range(lower,upper+1):
+   order=len(str(num))
+   sum=0
+   temp=num
+   while temp>0:
+       digit=temp%10
+       sum+=digit**order
+       temp//=10
+   if num==sum:
+       print(num)"
+sample8_type2_v2.py,"lower = 10
+upper = 5000
+for num in range(lower, upper + 2):
+    order = len(str(num))
+    sum = 0
+    temp = num
+    while temp > 0:
+        digit = temp % 10
+        sum += digit ** order
+        temp //= 10
+    if num == sum:
+        print(num)"
+sample8_type2_v3.py,"l = 10
+u = 5000
+for n in range(l, u + 2):
+    o = len(str(n))
+    add = 0
+    t = n
+    while t > 0:
+        d = t % 10
+        add += d ** o
+        t //= 10
+    if n == add:
+        print(n)"
+sample8_type3_v2.py,"lower = 100
+upper = 2000
+for num in range(lower, upper + 1):
+   order = len(str(num))
+   sum = 0
+   
+   while temp > 0:
+       digit = temp % 10
+       sum += digit ** order
+       temp //= 10
+   if num == sum:
+       print(num)"
+sample8_type3_v3.py,"lower = 100
+upper = 2000
+for num in range(lower, upper + 1):
+   order = len(str(num))
+   sum = 0
+   temp = num
+   while temp > 0:
+       digit = temp % 10
+       sum = sum + digit ** order # changed operation 
+       temp = temp/10
+   if num == sum:
+       print(num)"
+sample8_type3_v4.py,"lower = 100
+upper = 2000
+for num in range(lower, upper + 1):
+   order = len(str(num))
+   sum = 0
+   temp = num
+   while temp > 0:
+       digit = temp % 10
+       sum += digit ** order
+       temp //= 10
+   if num != sum: # changed 'if' condition
+       print(num)"

@@ -1,0 +1,11 @@
+sample5_type1_v1.py,"s = ""quantum""
+reverse = s[::-1]
+print(""Reverse of"", s, ""is"", reverse)"
+sample6_type1_v1.py,"import cmath
+a = 1
+b = 5
+c = 6
+d = (b**2) - (4*a*c)
+sol1 = (-b-cmath.sqrt(d))/(2*a)
+sol2 = (-b+cmath.sqrt(d))/(2*a)
+print('The solution are {0} and {1}'.format(sol1, sol2))"

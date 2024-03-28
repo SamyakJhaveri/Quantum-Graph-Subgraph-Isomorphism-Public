@@ -1,0 +1,9 @@
+,sample3_type1_v1.py(47),sample3_type2_v1.py(47),sample3_type3_v1.py(42),sample3_type3_v2.py(47),sample4_type1_v1.py(28),sample4_type2_v1.py(30),sample4_type3_v1.py(28),sample4_type3_v2.py(17)
+sample3_type1_v1.py(47),47
+sample3_type2_v1.py(47),47,47
+sample3_type3_v1.py(42),42,42,42
+sample3_type3_v2.py(47),47,47,42,47
+sample4_type1_v1.py(28),28,28,28,28,28
+sample4_type2_v1.py(30),30,30,30,30,28,30
+sample4_type3_v1.py(28),28,28,28,28,28,28,28
+sample4_type3_v2.py(17),17,17,17,17,17,17,17,17

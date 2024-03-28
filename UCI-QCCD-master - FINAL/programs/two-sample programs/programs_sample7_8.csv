@@ -1,0 +1,82 @@
+sample7_type1_v1.py,"lower = 100
+upper = 2000
+for num in range(lower, upper + 1):
+    order = len(str(num))
+    s = 0
+    temp = num
+    while temp > 0:
+        digit = temp % 10
+        s += digit ** order
+        temp //= 10
+    if num == s:
+        print(num)"
+sample7_type2_v1.py,"l = 100
+u = 2000
+for num in range(l, u + 1):
+    order = len(str(num))
+    s = 0
+    temp = num
+    while temp > 0:
+        d = temp % 10
+        s += d ** order
+        temp //= 10
+    if num == s:
+        print(num)"
+sample7_type3_v1.py,"lower = 100
+upper = 2000
+for num in range(lower, upper + 1):
+    order = len(str(num))
+    s = 0
+    temp = num
+    while temp > 0:
+        digit = temp % 10
+        s += digit ** order
+        temp //= 10
+    if num == s and num % 2 == 0:
+        print(num)
+"
+sample7_type3_v2.py,"lower = 100
+upper = 2000
+for num in range(lower, upper + 1):
+    order = len(str(num))
+    s = 0
+    temp = num
+    while temp > 0:
+        digit = temp % 10
+        s += digit ** order
+        temp //= 10"
+sample8_type1_v1.py,"def sequence(start, stop):
+   builder = []
+   i = start
+   while (i < stop):
+      if (i > start):
+         builder.append(',')
+      builder.append(i)
+      i += 1
+   return ''.join(builder)
+"
+sample8_type2_v1.py,"def generate_sequence(start, stop):
+   sequence_list = []
+   i = start
+   while (i < stop):
+      if (i > start):
+         sequence_list.append(',')
+      sequence_list.append(i)
+      i += 1
+   return ''.join(sequence_list)"
+sample8_type3_v1.py,"def sequence(start, stop):
+   builder = []
+   for i in range(start, stop):
+      if (i > start):
+         builder.append(',')
+      builder.append(i)
+   return ''.join(builder)
+"
+sample8_type3_v2.py,"def sequence(start, stop):
+   builder = []
+   i = start
+   while (i < stop):
+      if (i > start):
+         builder.append('|')
+      builder.append(i)
+      i += 1"

@@ -1,0 +1,177 @@
+sample4_type1_v1.py,"import cmath
+num = 1+2j
+num_sqrt = cmath.sqrt(num)
+print('The square root of {0} is {1:0.3f}+{2:0.3f}j'.format(num ,num_sqrt.real,num_sqrt.imag))"
+sample4_type2_v1.py,"import cmath
+n = -4+5j
+n_sqrt = cmath.sqrt(n)
+print('The square root of {0} is {1:0.3f}+{2:0.3f}j'.format(n, n_sqrt.real, n_sqrt.imag))
+"
+sample4_type3_v1.py,"import cmath
+num = complex(3, 4)
+num_sqrt = cmath.sqrt(num)
+print('The square root of {0} is {1:0.3f}+{2:0.3f}j'.format(num ,num_sqrt.real,num_sqrt.imag))"
+sample4_type3_v2.py,"import cmath
+num = 1+2j
+num_sqrt = cmath.sqrt(num)"
+sample5_type1_v1.py,"s = ""quantum""
+reverse = s[::-1]
+print(""Reverse of"", s, ""is"", reverse)"
+sample5_type2_v1.py,"text = ""python""
+rev = text[::-1]
+print(""Reverse of"", text, ""is"", rev)"
+sample5_type3_v1.py,"s = ""quantum""
+reverse = s[::-1]"
+sample5_type3_v2.py,"s = input(""Enter a string: "")
+reverse = s[::-1]
+print(""Reverse of"", s, ""is"", reverse)"
+sample6_type1_v1.py,"import cmath
+a = 1
+b = 5
+c = 6
+d = (b**2) - (4*a*c)
+sol1 = (-b-cmath.sqrt(d))/(2*a)
+sol2 = (-b+cmath.sqrt(d))/(2*a)
+print('The solution are {0} and {1}'.format(sol1, sol2))"
+sample6_type2_v1.py,"import cmath
+a = 1
+b = 4
+c = 4
+d = (b**2) - (4*a*c)
+sol1 = (-b-cmath.sqrt(d))/(2*a)
+sol2 = (-b+cmath.sqrt(d))/(2*a)
+print('The solution are {0} and {1}'.format(sol1, sol2))"
+sample6_type2_v2.py,"import cmath
+a = 2
+b = 6
+c = 4
+d = (b**2) - (4*a*c)
+sol1 = (-b-cmath.sqrt(d))/(2*a)
+sol2 = (-b+cmath.sqrt(d))/(2*a)
+print('The solution are {0} and {1}'.format(sol1, sol2))"
+sample6_type3_v1.py,"a = 1
+b = 5
+c = 6
+d = b**2 - 4*a*c
+sol1 = (-b-d**(1/2))/(2*a)
+sol2 = (-b+d**(1/2))/(2*a)
+print(f""The solutions are {sol1} and {sol2}"")"
+sample6_type3_v2.py,"a, b, c = 1, 5, 6
+d = b * b - 4 * a * c
+sol1 = (-b - (d ** 0.5)) / (2 + a)
+sol2 = (-b + (d ** 0.5)) / (2 + a)
+print(""The solutions are {0} and {1}"".format(sol1, sol2))"
+sample7_type1_v1.py,"lower = 100
+upper = 2000
+for num in range(lower, upper + 1):
+    order = len(str(num))
+    s = 0
+    temp = num
+    while temp > 0:
+        digit = temp % 10
+        s += digit ** order
+        temp //= 10
+    if num == s:
+        print(num)"
+sample7_type2_v1.py,"l = 100
+u = 2000
+for num in range(l, u + 1):
+    order = len(str(num))
+    s = 0
+    temp = num
+    while temp > 0:
+        d = temp % 10
+        s += d ** order
+        temp //= 10
+    if num == s:
+        print(num)"
+sample7_type3_v1.py,"lower = 100
+upper = 2000
+for num in range(lower, upper + 1):
+    order = len(str(num))
+    s = 0
+    temp = num
+    while temp > 0:
+        digit = temp % 10
+        s += digit ** order
+        temp //= 10
+    if num == s and num % 2 == 0:
+        print(num)
+"
+sample7_type3_v2.py,"lower = 100
+upper = 2000
+for num in range(lower, upper + 1):
+    order = len(str(num))
+    s = 0
+    temp = num
+    while temp > 0:
+        digit = temp % 10
+        s += digit ** order
+        temp //= 10"
+sample8_type1_v1.py,"def sequence(start, stop):
+   builder = []
+   i = start
+   while (i < stop):
+      if (i > start):
+         builder.append(',')
+      builder.append(i)
+      i += 1
+   return ''.join(builder)
+"
+sample8_type2_v1.py,"def generate_sequence(start, stop):
+   sequence_list = []
+   i = start
+   while (i < stop):
+      if (i > start):
+         sequence_list.append(',')
+      sequence_list.append(i)
+      i += 1
+   return ''.join(sequence_list)"
+sample8_type3_v1.py,"def sequence(start, stop):
+   builder = []
+   for i in range(start, stop):
+      if (i > start):
+         builder.append(',')
+      builder.append(i)
+   return ''.join(builder)
+"
+sample8_type3_v2.py,"def sequence(start, stop):
+   builder = []
+   i = start
+   while (i < stop):
+      if (i > start):
+         builder.append('|')
+      builder.append(i)
+      i += 1"
+sample9_type1_v1.py,"num = 7
+factorial = 1
+if num < 0:
+   print(""Sorry, factorial does not exist for negative numbers"")
+elif num == 0:
+   print(""The factorial of 0 is 1"")
+else:
+   for i in range(1,num + 1):
+       factorial = factorial*i
+   print(""The factorial of"",num,""is"",factorial)"
+sample9_type2_v1.py,"n = 7
+factorial = 1
+if n < 0:
+   print(""Sorry, factorial does not exist for negative numbers"")
+elif n == 0:
+   print(""The factorial of 0 is 1"")
+else:
+   for i in range(1, n + 1):
+       factorial = factorial*i
+   print(""The factorial of"",n,""is"",factorial)"
+sample9_type3_v1.py,"num = 7
+factorial = 1
+i = 1
+while i <= num:
+    factorial *= i
+    i += 1
+print(""The factorial of"", num, ""is"", factorial)"
+sample9_type3_v2.py,"num = 7
+factorial = 1
+for i in range(2, num + 1):
+    factorial *= i
+print(""The factorial of"", num, ""is"", factorial)"
