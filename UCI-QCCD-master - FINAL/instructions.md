@@ -1,7 +1,7 @@
 ## Instructions to run the programs in case you forget
 
-### Accessing the Remote Server(in this case), UCI ICS Openlab:
-1. Once you are in the remote server's home directory, type:
+
+1. To activate the virtual environment with the DWave Ocean SDK in it type:
     ```
         . ocean/bin/activate
     ```
@@ -26,5 +26,5 @@
         tmux kill-session
     ```
 
-2. In the ocean environment, go to the folder: '/Research/UCI Quantum Code Clone Detection Project/ Experiment Code/'
+2. In the ocean environment, go to the folder: '~/UCI Quantum Code Clone Detection Project/ Experiment Code/'
 in there, you will find 'qccd_experiment_conductor_Script_for_experiment.py'. run it using python or python3. 
