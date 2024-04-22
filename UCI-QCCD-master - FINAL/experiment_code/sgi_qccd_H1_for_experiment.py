@@ -81,9 +81,9 @@ def create_dqm_helper_function(G1, G2):
     print("G1 nodes:{}".format(len(G1_nodes)))
     print("G1 nodes:{}".format(G1_nodes))
     print("G2 nodes:{}".format(len(G2_nodes)))
-    # print("G1 edges:{}".format(G1_edges))
+    print("G1 edges:{}".format(G1_edges))
     print("G2 nodes:{}".format(G2_nodes))
-    # print("G2 edges:{}".format(G2_edges))
+    print("G2 edges:{}".format(G2_edges))
 
     dqm = dimod.DiscreteQuadraticModel()
 
@@ -124,24 +124,6 @@ def create_dqm_helper_function(G1, G2):
     # function.
     B = 2.0
 
-    """
-    # For all edges in G1, penalize mappings to edges not in G2
-    for edge1 in G1.edges:
-        node1_indices = (G1_nodes.index(edge1[0]), G1_nodes.index(edge1[1]))
-        for comb2_indices in itertools.combinations(range(n2), 2):
-            edge2 = (G2_nodes[comb2_indices[0]], G2_nodes[comb2_indices[1]])
-            if edge2 in G2.edges:
-                continue
-            
-            # In the DQM, the discrete variabels represent nodes
-            # in G1 and are named according to the node
-            # names. The cases for each discrete variable represent
-            # nodes in G2 and are indices from 0...n-1
-            
-            dqm.set_quadratic_case(edge2[0], node1_indices[0], edge2[1], node1_indices[1], B)
-            dqm.set_quadratic_case(edge2[0], node1_indices[1], edge2[1], node1_indices[0], B)
-    """
-
     # For all edges in G2, penalizes mappings to edges not in G1
     for edge2 in G2.edges:
         node2_indices = (G2_nodes.index(edge2[0]), G2_nodes.index(edge2[1]))
@@ -150,8 +132,6 @@ def create_dqm_helper_function(G1, G2):
             if e1 in G1.edges:
                 continue
 
-            # dqm.set_quadratic_case(comb1[0], node2_indices[0], comb1[1], node2_indices[1], B)
-            # dqm.set_quadratic_case(comb1[0], node2_indices[1], comb1[1], node2_indices[0], B)
             dqm.set_quadratic_case(
                 edge2[0], node1_indices[0], edge2[1], node1_indices[1], B
             )
@@ -171,6 +151,8 @@ def create_dqm_helper_function(G1, G2):
                     "node1 ({}) and node2 ({}) have the same type".format(node1, node2)
                 )
                 continue
+            # For additional, finer node-type comparison (comparing types of loops used in the two
+            # given programs):
             # if node1_type in ("ast.For", "ast.While") and node2_type in ("ast.For", "ast.While"):
             # dqm.set_linear_case(node2, G1_nodes.index(node1), 0.2)
             #    continue
@@ -376,14 +358,13 @@ def present_results(G1, G2, sampleset):
 
 
 if __name__ == "__main__":
-    # start = time.time()
-    # G1, G2 = edges_to_graph()
 
+    # You may have to update the URLs based on your file structure
     with open(
-        "/home/samyaknj/Research/UCI Quantum Code Clone Detection Project/Dataset/sample4/sample4_type1_v1.py",
+        "~/Dataset/sample4/sample4_type1_v1.py",
         "r",
     ) as f1, open(
-        "/home/samyaknj/Research/UCI Quantum Code Clone Detection Project/Dataset/sample4/sample4_type3_v2.py",
+        "~/Dataset/sample4/sample4_type3_v2.py",
         "r",
     ) as f2:
         code1 = f1.read()
@@ -409,9 +390,8 @@ if __name__ == "__main__":
     )  # the resultant mapping obtained form the annealing process (Could store 5 of these for averging out the result by running the script 5 times)
     best_mapping_energy = sampleset.first.energy
     qpu_access_time = sampleset.info["qpu_access_time"]
-    # row = [ncs[i][0], ncs[j][0], best_mapping_energy]
     G1_nodes = list(resG1.nodes)
-    # print("Corresponding mapping:{}".format(best_mapping))
+    print("Corresponding mapping:{}".format(best_mapping))
     updated_best_mapping = {k: G1_nodes[v] for k, v in best_mapping.items()}
     print("\nupdated_best_mapping:{}".format(updated_best_mapping))
     print("best_mapping_energy:{}".format(best_mapping_energy))
@@ -422,14 +402,6 @@ if __name__ == "__main__":
         )
     )
     print("updated_best_mapping:{}".format(updated_best_mapping))
-    # print("Energy: {0}, Timing: {1}, Minimum Node:{2}".format(data_energy, data_timing, data_minnode))
-    # print(len(data_energy))
-
-    # present_results(find_isomorphism(edges_to_graph()))
-
-    # end = time.time()
-    # print("\nTotal Time taken by Script to run(including the visuals): {}".format(str(end - start)))
-    # print("\nTotal Time taken by Script to run(excluding the visuals): {}".format(str(end - start)))
 
     # axes = plot_graphs(G1, G2, best)
     # axes[0].set_title('Graph G2 (Graph to Embed) mapped onto Graph G1 (Target Graph)')
