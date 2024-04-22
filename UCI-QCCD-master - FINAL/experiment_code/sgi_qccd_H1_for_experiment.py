@@ -124,6 +124,24 @@ def create_dqm_helper_function(G1, G2):
     # function.
     B = 2.0
 
+    """
+    # For all edges in G1, penalize mappings to edges not in G2
+    for edge1 in G1.edges:
+        node1_indices = (G1_nodes.index(edge1[0]), G1_nodes.index(edge1[1]))
+        for comb2_indices in itertools.combinations(range(n2), 2):
+            edge2 = (G2_nodes[comb2_indices[0]], G2_nodes[comb2_indices[1]])
+            if edge2 in G2.edges:
+                continue
+            
+            # In the DQM, the discrete variabels represent nodes
+            # in G1 and are named according to the node
+            # names. The cases for each discrete variable represent
+            # nodes in G2 and are indices from 0...n-1
+            
+            dqm.set_quadratic_case(edge2[0], node1_indices[0], edge2[1], node1_indices[1], B)
+            dqm.set_quadratic_case(edge2[0], node1_indices[1], edge2[1], node1_indices[0], B)
+    """
+
     # For all edges in G2, penalizes mappings to edges not in G1
     for edge2 in G2.edges:
         node2_indices = (G2_nodes.index(edge2[0]), G2_nodes.index(edge2[1]))
@@ -140,6 +158,26 @@ def create_dqm_helper_function(G1, G2):
             dqm.set_quadratic_case(
                 edge2[0], node1_indices[1], edge2[1], node1_indices[0], B
             )
+
+    # Node-Type Comparison Component
+    c = 0
+
+    for node2 in G2.nodes:
+        node2_type = str(node2).split()[0][1:]
+        for node1 in G1.nodes:
+            node1_type = str(node1).split()[0][1:]
+            if node1_type == node2_type:
+                print(
+                    "node1 ({}) and node2 ({}) have the same type".format(node1, node2)
+                )
+                continue
+            # if node1_type in ("ast.For", "ast.While") and node2_type in ("ast.For", "ast.While"):
+            # dqm.set_linear_case(node2, G1_nodes.index(node1), 0.2)
+            #    continue
+
+            dqm.set_linear_case(node2, G1_nodes.index(node1), B)
+            c += 1
+            print("node type comparison penalty applied {} times".format(c))
 
     return dqm
 
@@ -341,12 +379,11 @@ if __name__ == "__main__":
     # start = time.time()
     # G1, G2 = edges_to_graph()
 
-    # May have to modify the links as per your file structure
     with open(
-        "~/Dataset/sample4/sample4_type1_v1.py",
+        "/home/samyaknj/Research/UCI Quantum Code Clone Detection Project/Dataset/sample4/sample4_type1_v1.py",
         "r",
     ) as f1, open(
-        "~/Dataset/sample4/sample4_type3_v2.py",
+        "/home/samyaknj/Research/UCI Quantum Code Clone Detection Project/Dataset/sample4/sample4_type3_v2.py",
         "r",
     ) as f2:
         code1 = f1.read()
@@ -362,32 +399,19 @@ if __name__ == "__main__":
     # THE SUBGGRAPH ISOMORPHISM Problem Implemented for Quantum Code Clone Detection Solved on the DWave
     if NXGraph_G1.number_of_nodes() >= NXGraph_G2.number_of_nodes():
         resG1, resG2, sampleset = find_isomorphism(NXGraph_G1, NXGraph_G2)
-        print(
-            "\nMappping {0} with {1} nodes onto {2} with {3} nodes".format(
-                ncs[j][0],
-                NXGraph_G2.number_of_nodes(),
-                ncs[i][0],
-                NXGraph_G1.number_of_nodes(),
-            )
-        )
+        # print("\nMappping {0} with {1} nodes onto {2} with {3} nodes".format(ncs[j][0], NXGraph_G2.number_of_nodes(), ncs[i][0], NXGraph_G1.number_of_nodes()))
     else:
         resG1, resG2, sampleset = find_isomorphism(NXGraph_G2, NXGraph_G1)
-        print(
-            "\nMappping {0} with {1} nodes onto {2} with {3} nodes".format(
-                ncs[i][0],
-                NXGraph_G1.number_of_nodes(),
-                ncs[j][0],
-                NXGraph_G2.number_of_nodes(),
-            )
-        )
+        # print("\nMappping {0} with {1} nodes onto {2} with {3} nodes".format(ncs[i][0], NXGraph_G1.number_of_nodes(), ncs[j][0], NXGraph_G2.number_of_nodes()))
 
     best_mapping = (
         sampleset.first.sample
     )  # the resultant mapping obtained form the annealing process (Could store 5 of these for averging out the result by running the script 5 times)
     best_mapping_energy = sampleset.first.energy
     qpu_access_time = sampleset.info["qpu_access_time"]
+    # row = [ncs[i][0], ncs[j][0], best_mapping_energy]
     G1_nodes = list(resG1.nodes)
-    print("Corresponding mapping:{}".format(best_mapping))
+    # print("Corresponding mapping:{}".format(best_mapping))
     updated_best_mapping = {k: G1_nodes[v] for k, v in best_mapping.items()}
     print("\nupdated_best_mapping:{}".format(updated_best_mapping))
     print("best_mapping_energy:{}".format(best_mapping_energy))
@@ -398,29 +422,17 @@ if __name__ == "__main__":
         )
     )
     print("updated_best_mapping:{}".format(updated_best_mapping))
-    print(
-        "Energy: {0}, Timing: {1}, Minimum Node:{2}".format(
-            data_energy, data_timing, data_minnode
-        )
-    )
-    print(len(data_energy))
+    # print("Energy: {0}, Timing: {1}, Minimum Node:{2}".format(data_energy, data_timing, data_minnode))
+    # print(len(data_energy))
 
-    present_results(find_isomorphism(edges_to_graph()))
+    # present_results(find_isomorphism(edges_to_graph()))
 
-    end = time.time()
-    print(
-        "\nTotal Time taken by Script to run(including the visuals): {}".format(
-            str(end - start)
-        )
-    )
-    print(
-        "\nTotal Time taken by Script to run(excluding the visuals): {}".format(
-            str(end - start)
-        )
-    )
+    # end = time.time()
+    # print("\nTotal Time taken by Script to run(including the visuals): {}".format(str(end - start)))
+    # print("\nTotal Time taken by Script to run(excluding the visuals): {}".format(str(end - start)))
 
-    axes = plot_graphs(G1, G2, best)
-    axes[0].set_title("Graph G2 (Graph to Embed) mapped onto Graph G1 (Target Graph)")
+    # axes = plot_graphs(G1, G2, best)
+    # axes[0].set_title('Graph G2 (Graph to Embed) mapped onto Graph G1 (Target Graph)')
 
     # only finding isomorphism between two graphs for now
     """
